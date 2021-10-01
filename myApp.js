@@ -1,5 +1,5 @@
 require('dotenv').config();
-require ('body-parser');
+var bodyparser = require ('body-parser');
 
 var express = require('express');
 var app = express();
@@ -70,6 +70,12 @@ app.route('/name')
 
         res.json({name: first+' '+last});
         //res.json({name: firstname+' '+lastname});
+    })
+    .post((req, res) => {
+        let first = req.body.first;
+        let last = req.body.last;
+
+        res.json({name: first+' '+last});
     })
 
 
