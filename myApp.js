@@ -23,14 +23,13 @@ let logger = function middleware(req, res, next)  {
 app.use(logger);
 
 //4
-app.get('/',(req,res) => {
+app.get('/',(req,res,next) => {
     res.sendFile( __dirname +'/views/index.html');
 })
 
 
-
 //5
-app.get('/json',(req,res)=> {
+app.get('/json',(req,res,next)=> {
     let outmessage = 'Hello json';
     
     if (process.env.MESSAGE_STYLE === 'uppercase') {
