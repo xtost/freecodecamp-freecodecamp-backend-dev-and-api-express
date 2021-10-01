@@ -16,7 +16,7 @@ console.log("Hello World");
 app.use('/public', express.static(__dirname + '/public'));
 
 //6
-let logger = (req, res, next) => {
+let logger = function middleware(req, res, next)  {
     console.log(req.method + ' ' +req.path+' - '+req.ip);
     next();
 }
@@ -34,7 +34,6 @@ app.get('/json',(req,res)=> {
     let outmessage = 'Hello json';
     
     if (process.env.MESSAGE_STYLE === 'uppercase') {
-        console.log('here');
         outmessage = outmessage.toUpperCase();
     } 
     res.json({ message: outmessage})
