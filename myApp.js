@@ -1,5 +1,5 @@
 require('dotenv').config();
-require ('body-parser');
+var bodyparser = require ('body-parser');
 
 var express = require('express');
 var app = express();
@@ -8,7 +8,7 @@ var app = express();
 //1
 console.log("Hello World");
 //10
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyparser.urlencoded({extended: false}));
 
 //2
 //app.get('/',(req,res) => {
