@@ -7,6 +7,8 @@ var app = express();
   
 //1
 console.log("Hello World");
+//10
+app.use(bodyParser.urlencoded({extended: false}));
 
 //2
 //app.get('/',(req,res) => {
@@ -24,8 +26,7 @@ let logger = function middleware(req, res, next)  {
 }
 app.use(logger);
 
-//10
-app.use('/',bodyParser.urlencoded({extended: false}));
+
 
 //4
 app.get('/',(req,res,next) => {
