@@ -55,6 +55,22 @@ app.get('/:word/echo',(req,res) => {
 })
 
 
+//9
+app.route('/name')
+    .get((req,res,next) => {
+     //   console.log('here');
+        firstname = req.query.firstname;
+        lastname = req.query.lastname;
+        console.log(firstname);
+        console.log(lastname);
+        //res.json({name: firstname+' '+lastname});
+        next(); //it does not respond, so it needs a next not to get blocked
+    } ,(req,res,next) => {
+       // console.log('there')
+        res.json({name: firstname+' '+lastname});
+       // next();
+    })
+
 
 
 
