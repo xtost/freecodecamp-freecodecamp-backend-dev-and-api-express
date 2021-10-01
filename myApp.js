@@ -1,4 +1,6 @@
 require('dotenv').config();
+require ('body-parser');
+
 var express = require('express');
 var app = express();
 
@@ -21,6 +23,9 @@ let logger = function middleware(req, res, next)  {
     next();
 }
 app.use(logger);
+
+//10
+app.use('/',bodyParser.urlencoded({extended: false}));
 
 //4
 app.get('/',(req,res,next) => {
