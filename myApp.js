@@ -49,6 +49,11 @@ app.get('/now', (req,res,next) =>  {
   //  res.json({time: req.time, kk:req.kk});
 })
 
+//8
+app.get('/:word/echo',(req,res) => {
+    res.json({echo: req.params.word})
+})
+
 
 
 
